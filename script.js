@@ -19,7 +19,7 @@ const mainImage = document.getElementById('mainImage');
 const currentProduct = {
     id: 1,
     name: 'Premium Indoor Plant',
-    price: 49.99,
+    price: 550,
     image: 'https://images.pexels.com/photos/3644742/pexels-photo-3644742.jpeg'
 };
 
@@ -28,23 +28,23 @@ const suggestedProducts = [
     {
         id: 2,
         name: 'Snake Plant',
-        price: 29.99,
-        rating: 4.3,
-        image: 'https://images.pexels.com/photos/1084199/pexels-photo-1084199.jpeg'
+        price: 1300,
+        rating: 0,
+        image: './snake_plant.webp'
     },
     {
         id: 3,
         name: 'Succulent Garden',
-        price: 39.99,
-        rating: 4.7,
+        price: 1200,
+        rating: 0,
         image: 'https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg'
     },
     {
         id: 4,
-        name: 'Monstera Plant',
-        price: 34.99,
-        rating: 4.8,
-        image: 'https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg'
+        name: 'Ceramic Plant Pot',
+        price: 275,
+        rating: 0,
+        image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=500'
     }
 ];
 
@@ -64,7 +64,7 @@ function initializeSuggestedProducts() {
                 </div>
                 <span>${product.rating}</span>
             </div>
-            <div class="price">$${product.price}</div>
+            <div class="price">₹${product.price}</div>
             <button class="add-to-cart-btn" onclick="addSuggestedToCart(${product.id})">Add to Cart</button>
         `;
         container.appendChild(card);
@@ -134,7 +134,7 @@ function updateCartCount() {
 
 function updateCartTotal() {
     const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    cartTotal.textContent = `$${total.toFixed(2)}`;
+    cartTotal.textContent = `₹${total.toFixed(2)}`;
 }
 
 function updateCartDisplay() {
@@ -147,7 +147,7 @@ function updateCartDisplay() {
             <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: var(--border-radius);">
             <div style="flex-grow: 1;">
                 <h3 style="margin: 0;">${item.name}</h3>
-                <p style="margin: 0;">$${item.price}</p>
+                <p style="margin: 0;">₹${item.price}</p>
             </div>
             <div class="quantity-controls" style="display: flex; align-items: center; gap: 0.5rem;">
                 <button class="qty-btn">-</button>
